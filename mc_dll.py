@@ -29,6 +29,7 @@ def get_normal_from_mc( src_string,
                         src_make_border,
                         src_write_triangles):
 
+
     float3 = ct.c_float * 3
     int1 = ct.c_uint
     float1 = ct.c_float
@@ -61,7 +62,7 @@ def get_normal_from_mc( src_string,
 
     lib = ct.CDLL("mc_dll.dll")
 
-    lib.get_normal(src_string,
+    lib.get_normal(ct.c_char_p(src_string.encode('utf-8')),
                     z_w,
                     C_x, C_y, C_z, C_w,
                     max_iterations,
