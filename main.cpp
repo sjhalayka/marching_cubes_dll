@@ -1,19 +1,17 @@
 #include "main.h"
 
-bool get_fractal_surface_triangles(vector<triangle> &triangles, float x_grid_min, float x_grid_max, float y_grid_min, float y_grid_max, float z_grid_min, float z_grid_max, size_t x_res, size_t y_res, size_t z_res)
+int main(void)
 {
-	triangles.clear();
-
-	//float x_grid_max = 1.5;
-	//float y_grid_max = 1.5;
-	//float z_grid_max = 1.5;
-	//float x_grid_min = -x_grid_max;
-	//float y_grid_min = -y_grid_max;
-	//float z_grid_min = -z_grid_max;
-	//size_t x_res = 200;
-	//size_t y_res = 200;
-	//size_t z_res = 200;
-	bool make_border = false;
+	float x_grid_max = 1.5;
+	float y_grid_max = 1.5;
+	float z_grid_max = 1.5;
+	float x_grid_min = -x_grid_max;
+	float y_grid_min = -y_grid_max;
+	float z_grid_min = -z_grid_max;
+	size_t x_res = 100;
+	size_t y_res = 100;
+	size_t z_res = 100;
+	bool make_border = true;
 
 	float z_w = 0;
 	quaternion C;
@@ -29,13 +27,13 @@ bool get_fractal_surface_triangles(vector<triangle> &triangles, float x_grid_min
 	if (false == eqparser.setup("Z = sin(Z) + C * sin(Z)", error_string, C))
 	{
 		cout << "Equation error: " << error_string << endl;
-		return false;
+		return -1;
 	}
 
 	// When adding a border, use a value that is "much" greater than the threshold.
 	const float border_value = 1.0f + threshold;
 
-	//vector<triangle> triangles;
+	vector<triangle> triangles;
 	vector<float> xyplane0(x_res*y_res, 0);
 	vector<float> xyplane1(x_res*y_res, 0);
 
@@ -101,21 +99,8 @@ bool get_fractal_surface_triangles(vector<triangle> &triangles, float x_grid_min
 
 	cout << endl;
 
-//	if (0 < triangles.size())
-//		write_triangles_to_binary_stereo_lithography_file(triangles, "out.stl");
+	if (0 < triangles.size())
+		write_triangles_to_binary_stereo_lithography_file(triangles, "out.stl");
 
-	return true;
-}
-
-int main(void)
-{
-	vector<triangle> triangles;
-
-	get_fractal_surface_triangles(triangles,
-		-1.5, 1.5,
-		-1.5, 1.5,
-		-1.5, 1.5,
-		100, 100, 100);
-
-	write_triangles_to_binary_stereo_lithography_file(triangles, "out.stl");
+	return 0;
 }

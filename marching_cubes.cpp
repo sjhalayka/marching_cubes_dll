@@ -2,11 +2,8 @@
 // Source code by Shawn Halayka
 // Source code is in the public domain
 
-#include "stdafx.h"
-
 
 #include "marching_cubes.h"
-
 
 
 namespace marching_cubes

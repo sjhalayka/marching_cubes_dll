@@ -82,4 +82,3 @@ bool write_triangles_to_binary_stereo_lithography_file(const vector<triangle> &t
 
 	return true;
 }
-

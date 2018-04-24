@@ -1,13 +1,8 @@
 // Source code by Shawn Halayka
 // Source code is in the public domain
 
-#include "stdafx.h"
-
-
 
 #include "eqparse.h"
-
-
 
 
 void quaternion_julia_set_equation_parser::cleanup(void)

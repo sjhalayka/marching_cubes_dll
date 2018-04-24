@@ -6,8 +6,6 @@
 #define EQPARSE_H
 
 
-#include "stdafx.h"
-
 #include "quaternion_math.h"
 #include "string_utilities.h"
 using string_utilities::lower_string;

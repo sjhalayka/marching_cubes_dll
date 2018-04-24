@@ -1,14 +1,8 @@
 // Source code by Shawn Halayka
 // Source code is in the public domain
 
-#include "stdafx.h"
-
-
 #include "string_utilities.h"
 
-
-#include <vector>
-#include <string>
 using std::vector;
 using std::string;
 

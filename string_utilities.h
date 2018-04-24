@@ -5,8 +5,6 @@
 #define STRING_UTILITIES_H
 
 
-#include "stdafx.h"
-
 #include <vector>
 #include <string>
 #include <cstdlib>

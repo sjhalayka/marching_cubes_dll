@@ -10,9 +10,6 @@
 #include "primitives.h"
 
 
-#include "stdafx.h"
-
-
 #include <iostream>
 using std::cout;
 using std::endl;

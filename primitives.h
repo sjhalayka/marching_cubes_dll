@@ -121,17 +121,6 @@ public:
 class triangle
 {
 public:
-
-	vertex_3 get_normal(void)
-	{
-		vertex_3 v0 = vertex[1] - vertex[0];
-		vertex_3 v1 = vertex[2] - vertex[0];
-		vertex_3 normal = v0.cross(v1);
-		normal.normalize();
-
-		return normal;
-	}
-
 	vertex_3 vertex[3];
 };
 
